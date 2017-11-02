@@ -1,7 +1,5 @@
 package ac.uk.napier.set07110Coursework;
 
-import java.util.Arrays;
-
 import weather.WeatherData;
 
 /**
@@ -21,7 +19,7 @@ public class Answer02 {
 		
 		String[] weatherData = WeatherData.getData();
 		double cold = 1000000;
-		String [] station = new String[100];// = weatherData;
+		String [] station = new String[100];
 		for (int i = 1; i < weatherData.length - 1; i++) 
 		{
 			String [] tmpA = weatherData[i].split(",");
