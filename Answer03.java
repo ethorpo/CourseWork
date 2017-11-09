@@ -46,7 +46,7 @@ public class Answer03 {
 			}
 		}
 
-		mean = mean / 2;																//Calculate mean.
+		mean = mean / total;																//Calculate mean.
 
 		System.out.println("Min=" + min + " Max=" + max + " Mean=" + mean + " There are " 
 				+ total + " entries for Weather station 3768 at 6 AM during January 2015");
