@@ -16,14 +16,14 @@ public class Answer02 {
 		/*
 		 * Add your code below
 		 */
-		
-		String[] weatherData = WeatherData.getData();
-		double cold = 1000000;
-		String [] station = new String[100];
+
+		String[] weatherData = WeatherData.getData();			//Make weatherData usable.
+		double cold = 1000000;									//Store coldest temperature.
+		String [] station = new String[100];					//Store Station.
 		for (int i = 1; i < weatherData.length - 1; i++) 
 		{
-			String [] tmpA = weatherData[i].split(",");
-			Double temp = Double.parseDouble(tmpA[9]);
+			String [] tmpA = weatherData[i].split(",");			//Chop into pieces.
+			Double temp = Double.parseDouble(tmpA[9]);			//find coldest temperature.
 			if (temp < cold)
 			{
 				station = weatherData[i].split(",");
@@ -33,5 +33,5 @@ public class Answer02 {
 		System.out.println(station[0] + ", " + station[1] + ", " + station[9] + ", " + station [4] + 
 				", " + station [5] + ", " + station [6] + ", " + station [7]);
 	}
-	
+									
 }

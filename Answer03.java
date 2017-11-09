@@ -16,7 +16,7 @@ public class Answer03 {
 		/*
 		 * Add your code below
 		 */
-		
+
 		String[] weatherData = WeatherData.getData();
 
 		int index = 1;
@@ -24,31 +24,31 @@ public class Answer03 {
 		double min = 1000;
 		double max = 0;
 		double mean = 0;
-	
+
 		for (index = 1; index < weatherData.length - 1; index++) 
 		{
-			
-		String [] tmpA = weatherData[index].split(",");
-			
+
+			String [] tmpA = weatherData[index].split(",");								//Make weatherData usable.
+
 			if ( tmpA[7].equals("6") && tmpA[5].equals("1") && tmpA[0].equals("3768")) {
 				double temp = Double.parseDouble(tmpA[9]);
-				mean = mean + temp;
+				mean = mean + temp;														//Store all temperatures.
 				total++;
-			
-				if (temp < min) {
+
+				if (temp < min) {														//Find minimum temperature.
 					min = temp;
 				}
-			
-				else if (temp > max) {
+
+				else if (temp > max) {													//Find maximum temperature.
 					max =temp;
 				}
 
+			}
 		}
-	}
-			
-		mean = mean / 2;
-		
+
+		mean = mean / 2;																//Calculate mean.
+
 		System.out.println("Min=" + min + " Max=" + max + " Mean=" + mean + " There are " 
-		+ total + " entries for Weather station 3768 at 6 AM during January 2015");
+				+ total + " entries for Weather station 3768 at 6 AM during January 2015");
 	}
 }

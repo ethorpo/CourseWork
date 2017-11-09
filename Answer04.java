@@ -19,19 +19,19 @@ public class Answer04 {
 		 * Add your code below
 		 */
 
-		String[] weatherData = WeatherData.getData();
-		HashSet<String> date = new HashSet<String>();
+		String[] weatherData = WeatherData.getData();		//Make weatherData useful.
+		HashSet<String> date = new HashSet<String>();		//Store date.
 		int i = 1;
 		String day;
 		String month;
 		String fullDate;
 
-		while (i < weatherData.length - 1) {
-			String [] tmpA = weatherData[i].split(",");
-			if (Double.parseDouble(tmpA[9]) <= -2.0){
+		while (i < weatherData.length - 1) {				//Test all data.
+			String [] tmpA = weatherData[i].split(",");		//Split data.
+			if (Double.parseDouble(tmpA[9]) <= -2.0){		//Check temperature.
 				day = (tmpA[6]);
 				month = (tmpA[5]);
-				fullDate = day + "-" + month;
+				fullDate = day + "-" + month;				//Create full dates.
 				date.add(fullDate);
 				i++;
 			}

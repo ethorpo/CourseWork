@@ -16,15 +16,15 @@ public class Answer05 {
 		/*
 		 * Add your code below
 		 */
-		
-		String[] weatherData = WeatherData.getData();
-		double latitude = 0;
-		String [] station = new String[100];
-		for (int i = 1; i < weatherData.length - 1; i++) 
+
+		String[] weatherData = WeatherData.getData();		//Make weatherData useful.
+		double latitude = 0;								//Store latitude.
+		String [] station = new String[100];				//Store location.
+		for (int i = 1; i < weatherData.length - 1; i++) 	//Test all data.
 		{
-			String [] tmpA = weatherData[i].split(",");
+			String [] tmpA = weatherData[i].split(",");		//Split data.
 			Double hight = Double.parseDouble(tmpA[2]);
-			if (hight > latitude)
+			if (hight > latitude)							//Find highest location.
 			{
 				station = weatherData[i].split(",");
 				latitude = hight;

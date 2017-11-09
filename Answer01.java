@@ -18,15 +18,15 @@ public class Answer01 {
 		/*
 		 * Add your code below
 		 */
-		
-		String[] weatherData = WeatherData.getData();
-		HashSet<Integer> location = new HashSet<Integer>();
+
+		String[] weatherData = WeatherData.getData();						//Make weatherData usable.
+		HashSet<Integer> location = new HashSet<Integer>();					//Store all locations.
 		int i = 1;
-		while (i < weatherData.length - 1) {
-			location.add(Integer.parseInt(weatherData[i].substring(0, 4)));
+		while (i < weatherData.length - 1) {								//Test for all Data.
+			location.add(Integer.parseInt(weatherData[i].substring(0, 4)));	//Chops Data into parts.
 			i++;
 		}
-		
-		System.out.println("There are " + location.size() + " Sites.");
+
+		System.out.println("There are " + location.size() + " Sites.");		//Prints number of locations.
 	}	
 }
