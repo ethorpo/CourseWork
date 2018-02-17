@@ -84,7 +84,11 @@ int main()
 		//Repeat until End Of File character is reached.	
 		while ((ch = getc(fileIn)) != EOF) {
 
-			if (ch != ' ' && ch != '\n') { ++charcount; }
+			if (ch != ' ' && ch != '\n') 
+			{
+				++charcount;
+				
+			}
 			// Increment word count if new line or space character
 			if (ch == ' ' || ch == '\n') { ++wordcount; }
 

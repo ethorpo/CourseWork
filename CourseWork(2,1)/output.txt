@@ -1,5 +1,7 @@
-Is
-this
-working?
-
-3
+A:  1
+random:  2
+sentence:  2
+or:  1
+a:  1
+new:  1
+Total Words: 6
