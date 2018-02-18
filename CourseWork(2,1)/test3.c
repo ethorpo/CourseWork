@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <string.h>
 
+int cmpfunc (const void * a, const void * b)
+{
+	return (*(int*)b - *(int*)a);
+}
+
 enum { MAX_WORDS = 1000, MAX_WORD_LEN = 32 };
 
 int main(void)
@@ -61,6 +66,8 @@ int main(void)
             l = 0;
         }
     }
+
+	qsort(count, w, sizeof(int *), cmpfunc);
 
     for (int i = 0; i < w; i++)
 		{

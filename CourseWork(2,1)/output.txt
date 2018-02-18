@@ -1,6 +1,6 @@
-A:  1
+A:  2
 random:  2
-sentence:  2
+sentence:  1
 or:  1
 a:  1
 new:  1
