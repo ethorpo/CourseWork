@@ -1,4 +1,3 @@
-#include <assert.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -24,6 +23,7 @@ int main(int argc, char*argv[])
 	char* inputFile = "in";
 	char* outputFile = "out";
 	char ch[256];
+	int comWord = 0;
 
 	for (int i = 1; i < argc; i++)
 	{
@@ -54,7 +54,6 @@ int main(int argc, char*argv[])
 			else if (l > 0)
 			{
 				word[l] = '\0';
-				//printf( "Found word <<%s>>\n", word);
 				int found = 0;
 				for (int i = 0; i < w; i++)
 				{
@@ -82,8 +81,9 @@ int main(int argc, char*argv[])
 
 		for (int i = 0; i < sizeof(ch); i++)
 		{
-			c = ch[i];
 
+			c = ch[i];
+			
 			if (isalpha(c))
 			{
 				word[l++] = c;
@@ -91,7 +91,6 @@ int main(int argc, char*argv[])
 			else if (l > 0)
 			{
 				word[l] = '\0';
-				//printf( "Found word <<%s>>\n", word);
 				int found = 0;
 				for (int i = 0; i < w; i++)
 				{
@@ -109,6 +108,7 @@ int main(int argc, char*argv[])
 				}
 				l = 0;
 			}
+			
 		}
 
 	}
