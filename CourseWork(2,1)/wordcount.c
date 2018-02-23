@@ -129,5 +129,8 @@ int main(int argc, char*argv[])
 		}
 		printf("Total Words: %d", totalWords);
 	}
+	fclose(file);
+	fclose(fileIn);
+	fclose(fileOut);
 	return 0;
 }
