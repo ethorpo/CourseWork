@@ -7,14 +7,12 @@ int cmpfunc (const void * a, const void * b)
 	return (*(int*)b - *(int*)a);
 }
 
-enum { MAX_WORDS = 1000, MAX_WORD_LEN = 32 };
-
 int main(int argc, char*argv[])
 {
-    char words[MAX_WORDS][MAX_WORD_LEN];
-    int  count[MAX_WORDS] = { 0 };
+    char words[1000][32];
+    int  count[1000] = { 0 };
     int w = 0;
-    char word[MAX_WORD_LEN];
+    char word[32];
     int c;
     int l = 0;
 	int totalWords = 0;
@@ -24,6 +22,7 @@ int main(int argc, char*argv[])
 	char* outputFile = "out";
 	char ch[256];
 	int comWord = 0;
+	//bool caseSense = false;
 
 	for (int i = 1; i < argc; i++)
 	{
@@ -39,6 +38,10 @@ int main(int argc, char*argv[])
 			outputFile = argv[i + 1];
 			i++;
 		}
+		/*if (strcmp(argv[i], "-c") == 0)
+		{
+			
+		}*/
 	}
 
 	if (strcmp(inputFile, "in") != 0)

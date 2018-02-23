@@ -1,0 +1,24 @@
+c is the most commonly used programming language for writing operating systems. the first operating system written in c is unix. later operating systems like linux were all written in c. not only is c the language of operating systems, it is the precursor and inspiration for almost all of the most popular high level languages available today. in fact, perl, php, python and ruby are all written in c.
+
+by way of analogy, let us say that you were going to be learning spanish, italian, french, or portuguese. do you think knowing latin would be helpful? just as latin was the basis of all of those languages, knowing c will enable you to understand and appreciate an entire family of programming languages built upon the traditions of c. knowledge of c enables freedom.
+
+why c, and not assembly language?
+
+while assembly language can provide speed and maximum control of the program, c provides portability.
+
+different processors are programmed using different assembly languages and having to choose and learn only one of them is too arbitrary. in fact, one of the main strengths of c is that it combines universality and portability across various computer architectures while retaining most of the control of the hardware provided by assembly language.
+
+assembly, while extremely powerful, is simply too difficult to program large applications and hard to read or interpret in a logical way. c is a compiled language, which creates fast and efficient executable files. it is also a small language. a c statement corresponds to at most a handful of assembly statements, everything else is provided by library functions.
+
+so is it any wonder that c is such a popular language?
+
+like toppling dominoes, the next generation of programs follows the trend of its ancestors. operating systems designed in c always have system libraries designed in c. those system libraries are in turn used to create higher level libraries, and the designers of those libraries often decide to use the language the system libraries used. application developers use the higher level libraries to design word processors, games, media players and the like. many of them will choose to program in the language that the higher level library uses. and the pattern continues on and on and on...
+
+why c, and not another language?
+the primary design of c is to produce portable code while maintaining performance and minimising footprint. this is useful for operating systems, embedded systems or other programs where performance matters a lot. with c it is relatively easy to keep a mental picture of what a given line really does, because most of the things are written explicitly in the code. c has a big codebase for low level applications. it is the native language of unix, which makes it flexible and portable. it is a stable and mature language which is unlikely to disappear for a long time and has been ported to most, if not all, platforms.
+
+one powerful reason is memory allocation. unlike most programming languages, c allows the programmer to write directly to memory. key constructs in c such as structs, pointers and arrays are designed to structure and manipulate memory in an efficient, machine independent fashion. in particular, c gives control over the memory layout of data structures. moreover dynamic memory allocation is under the control of the programmer, which also means that memory deallocation has to be done by the programmer. languages like java and perl shield the programmer from having to worry about memory allocation and pointers. this can be useful since dealing with memory allocation when building a high level program is a highly error prone process. however, when dealing with low level code such as the part of the os that controls a device, c provides a uniform, clean interface. these capabilities just do not exist in most other languages.
+
+while perl, php, python and ruby may be powerful and support many features not provided by default in c, they are not normally implemented in their own language. rather, most such languages initially relied on being written in c, and would require their implementation be ported to a new platform before they can be used.
+
+as with all programming languages, whether you want to choose c over another high level language is a matter of opinion and both technical and business requirements could dictate which language is required. 
