@@ -21,4 +21,4 @@ one powerful reason is memory allocation. unlike most programming languages, c a
 
 while perl, php, python and ruby may be powerful and support many features not provided by default in c, they are not normally implemented in their own language. rather, most such languages initially relied on being written in c, and would require their implementation be ported to a new platform before they can be used.
 
-as with all programming languages, whether you want to choose c over another high level language is a matter of opinion and both technical and business requirements could dictate which language is required. 
+as with all programming languages, whether you want to choose c over another high level language is a matter of opinion and both technical and business requirements could dictate which language is required.þ 

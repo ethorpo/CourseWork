@@ -1,3 +1,10 @@
+/*
+Author: Edwin John Thorpe 40316673
+Date of Modification: 23/01/18
+Purpose of Program: To output all unique words and the amount
+of times they occur with a total word count from a file. 
+*/
+
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -17,13 +24,17 @@ int main(int argc, char*argv[])
 	char chArray[10000];
 	int charCount = 0;
 	int wordLength = 0;
-	int wrd = 0;
+	int wordChar = 0;
 	char* space = " ";
 	char words[10000][50];
 	int  count[10000] = { 0 };
 	char word[50];
 
-	//inputing
+	/*
+	Inputing,
+	Reading stdin for arguments 
+	and locating files if called
+	*/
 
 	for (int i = 1; i < argc; i++)
 	{
@@ -43,7 +54,10 @@ int main(int argc, char*argv[])
 		}
 	}
 
-	//stdinput
+	/*
+	stdinput,
+	Importing the text from file or stdin
+	*/
 
 	if (strcmp(inputFile, "in") != 0)
 	{
@@ -53,6 +67,7 @@ int main(int argc, char*argv[])
 			chArray[charCount] = ch;
 			charCount++;
 		}
+		fclose(fileIn);
 	}
 	else
 	{
@@ -60,7 +75,10 @@ int main(int argc, char*argv[])
 		gets(chArray);
 	}
 
-	//capitalisation
+	/*
+	Capitalisation,
+	Turns all upper case to lower case if -c arg is present
+	*/
 
 	if (caseSense)
 	{
@@ -70,7 +88,10 @@ int main(int argc, char*argv[])
 		}
 	}
 
-	//working file
+	/*
+	Working file
+	Create a file to edit the input text
+	*/
 
 	file = fopen("working.txt", "w");
 	fputs(chArray, file);
@@ -78,7 +99,11 @@ int main(int argc, char*argv[])
 	fclose(file);
 	file = fopen("working.txt", "r");
 
-	//sorting
+	/*
+	Sorting
+	Sort the text into words and recored each
+	individual work and its count
+	*/
 
 	while ((ch = getc(file)) != EOF)
 	{
@@ -90,7 +115,7 @@ int main(int argc, char*argv[])
 		{
 			word[wordLength] = '\0';
 			int found = 0;
-			for (int i = 0; i < wrd; i++)
+			for (int i = 0; i < wordChar; i++)
 			{
 				if (strcmp(word, words[i]) == 0)
 				{
@@ -101,28 +126,33 @@ int main(int argc, char*argv[])
 			}
 			if (!found)
 			{
-				strcpy(words[wrd], word);
-				count[wrd++] = 1;
+				strcpy(words[wordChar], word);
+				count[wordChar++] = 1;
 			}
 			wordLength = 0;
 		}
 	}
 
-	//outputing
+	/*
+	Outputing
+	Output the sorted text to either a file or 
+	stdout depending if an output file has been given
+	*/
 
 	if (strcmp(outputFile, "out") != 0)
 	{
 		fileOut = fopen(outputFile, "w");
-		for (int i = 0; i < wrd; i++)
+		for (int i = 0; i < wordChar; i++)
 		{
 			fprintf(fileOut, "%s:%d\n", words[i], count[i]);
 			totalWords = totalWords + count[i];
 		}		
 		fprintf(fileOut, "Total Words: %d", totalWords);
+		fclose(fileOut);
 	}
 	else
 	{
-		for (int i = 0; i < wrd; i++)
+		for (int i = 0; i < wordChar; i++)
 		{
 			printf("%s:%d\n", words[i], count[i]);
 			totalWords = totalWords + count[i];
@@ -130,7 +160,5 @@ int main(int argc, char*argv[])
 		printf("Total Words: %d", totalWords);
 	}
 	fclose(file);
-	fclose(fileIn);
-	fclose(fileOut);
 	return 0;
 }
