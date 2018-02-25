@@ -1,0 +1,2 @@
+wordcount:
+	cl wordcount.c

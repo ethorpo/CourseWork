@@ -20,7 +20,6 @@ int main(int argc, char*argv[])
 	FILE *file;
 	FILE *fileIn;
 	FILE *fileOut;
-	char working[] = "working.txt";
 	char ch;
 	char chArray[10000];
 	int charCount = 0;
